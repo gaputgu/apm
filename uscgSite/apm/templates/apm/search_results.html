@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+{% load class_tag %}
+
+{% for queryset in results %}
+  {% for model in queryset %}
+
+    {% if model|get_class == "productLine" %}
+      <a href = "">{{model}}</a>
+    {% endif %}
+
+    {% if model|get_class == "shipClass" %}
+      <a href = "">{{model}}</a>
+    {% endif %}
+
+    {% if model|get_class == "shipInstance" %}
+      <a href = "">{{model}}</a>
+    {% endif %}
+
+    {% if model|get_class == "maintenanceRequirementList" %}
+      <a href = "">{{model}}</a>
+    {% endif %}
+
+    {% if model|get_class == "maintenanceItem" %}
+      <a href = "">{{model}}</a>
+    {% endif %}
+
+    {% if model|get_class == "supplyPart" %}
+      <a href = "">{{model}}</a>
+    {% endif %}
+
+  {% endfor %}
+{% endfor%}
+
+{% endblock %}

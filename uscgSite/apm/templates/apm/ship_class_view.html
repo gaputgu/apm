@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load render_table from django_tables2 %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/ship_class.css' %}">
+<link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<link rel="stylesheet" href="{% static 'css/table.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "header.html" %}
+{% include "sidebarnav.html" %}
+{% load class_tag %}
+
+<div class = "main">
+  <h2>{{ship_class.name}} Cutters</h2>
+  {% render_table table %}
+</div>
+
+{% endblock %}

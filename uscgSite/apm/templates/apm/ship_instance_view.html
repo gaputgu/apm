@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load render_table from django_tables2 %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/ship_instance.css' %}">
+<link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+<link rel="stylesheet" href="{% static 'css/table.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include "header.html" %}
+{% include "sidebarnav.html" %}
+{% load class_tag %}
+
+<div class="main">
+  <h2>{{ship_string}}</h2>
+  <p>Next Availability: {{ship_instance.availability}}
+  <h2>Maintenance Requirement List Items</h2>
+  {% render_table mrl_table %}
+  <h2>Miscellaneous Maintenance Items</h2>
+  {% render_table mi_table %}
+
+</div>
+
+{% endblock %}

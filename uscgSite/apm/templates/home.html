@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+{% endblock %}
+
+{% block topnav %}
+<header>
+  <a href="">About</a>
+</header>
+
+
+<div class = "nav">
+  <ul style="list-style:none;" >
+      <li><p id = "pl">Product Lines<p></li>
+      {% for object in product_lines %}
+        <li><a href = "{{object.get_absolute_url}}">{{object.name}}</a></li>
+      {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+<h1>Availability Project Manager</h1>
+<form action="{url ''}" method="get">
+  <div class="container-fluid">
+    <input id="search" type="text" name="q">
+  </div>
+  <div class="container-fluid">
+    <input type="submit" value="Search">
+  </div>
+</form>
+
+
+{% endblock %}

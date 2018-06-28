@@ -1,0 +1,11 @@
+{% block sidebar %}
+<div class ="left">
+  <ul class = "sidenav" style="list-style:none;" >
+      <li><a href = "{% url 'home' %}">Home</a></li>
+      <li><p id = "pl">Product Lines<p></li>
+      {% for object in product_lines %}
+        <li><a href = "{{object.get_absolute_url}}">{{object.name}}</a></li>
+      {% endfor %}
+  </ul>
+</div>
+{% endblock %}

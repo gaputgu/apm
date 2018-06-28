@@ -1,0 +1,21 @@
+div[class = 'left'] {
+  position: absolute;
+  left: 0; top: 92px; bottom:0;
+  width:178px;
+  font-family: helvetica, sans-serif;
+  margin-left: 0;
+  padding-left:0;
+  border-right: 1px solid #999999;
+}
+
+ul[class="sidenav"] {
+  padding-left: 0;
+  margin-left: 0;
+  text-align:center;
+}
+
+p[id='pl'] {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+}
